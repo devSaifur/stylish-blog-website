@@ -1,24 +1,17 @@
-const menuOpenBtn = document.getElementById("menu-open")
-const menuCloseBtn = document.getElementById("menu-close")
+const navToggle = document.querySelector(".nav-toggle")
 const navLinks = document.getElementById("nav-links")
-const mobileNav = document.getElementById("mobile-nav")
 
-function eventHandler(btn, add, remove) {
-    btn.addEventListener("click", () => {
-        add.classList.add("hidden")
-        remove.classList.remove("hidden")
-    })
+function eventHandler(e) {
+    if (e.name == "menu-outline") {
+        e.name = "close-outline"
+        navLinks.classList.remove("hidden")
+        navLinks.classList.add("flex")
+
+        
+    } else if (e.name == "close-outline") {
+        e.name = "menu-outline"
+        navLinks.classList.add("hidden")
+
+    }
 }
 
-eventHandler(menuOpenBtn, menuOpenBtn, menuCloseBtn)
-eventHandler(menuCloseBtn, menuCloseBtn, menuOpenBtn)
-
-function navEvent(btn, remove, add) {
-    btn.addEventListener("click", () => {
-        navLinks.classList.remove(remove)
-        navLinks.classList.add(add)
-    })
-}
-
-navEvent(menuOpenBtn,"hidden", "fixed")
-navEvent(menuCloseBtn, "fixed", "hidden")

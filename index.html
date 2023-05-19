@@ -8,8 +8,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
 
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="public/styles/main.css">
   <script src="scripts/index.js" defer></script>
 
   <title>News homepage</title>
@@ -17,13 +20,12 @@
 </head>
 <body class="font-[Inter] min-h-full max-w-[150rem] mx-auto py-5 px-4 md:px-44 md:py-20">
 
-  <header>
-    <nav class="flex flex-row items-center justify-between mb-4 md:mb-10">
+  <header class="flex justify-between">
       <div>
         <img class="w-16 p-3" src="assets/images/logo.svg" alt="...">
       </div>
 
-      <div id="nav-links" class="hidden text-xl bg-white max-sm:h-screen max-sm:top-0 max-sm:right-0 max-sm:w-3/4 max-sm:pl-10 max-sm:pt-80 md:flex">
+      <nav id="nav-links" class="hidden max-sm:fixed bg-white max-sm:h-[100dvh] max-sm:w-[70%] max-sm:top-0 max-sm:right-0 max-sm:justify-center md:flex">
         <ul class="flex md:flex-row flex-col justify-center gap-8">
           <li><a class="hover:text-orange-500" href="#">Home</a></li>
           <li><a class="hover:text-orange-500" href="#">New</a> </li>
@@ -31,13 +33,11 @@
           <li><a class="hover:text-orange-500" href="#">Trending</a></li>
           <li><a class="hover:text-orange-500" href="#">Categories</a></li>
         </ul>
-      </div>
+      </nav>
 
       <div class="md:hidden">
-        <img id="menu-open" class="md:hidden" src="assets/images/icon-menu.svg" alt="">
-        <img id="menu-close" class="hidden absolute z-10 right-5 top-8" src="assets/images/icon-menu-close.svg" alt="">
+        <ion-icon class="text-4xl" onclick="eventHandler(this)" name="menu-outline"></ion-icon>
       </div>
-    </nav>
   </header>
 
   <main class="grid gap-12">
