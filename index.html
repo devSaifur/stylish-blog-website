@@ -1,146 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+      defer
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+      defer
+    ></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="public/styles/main.css">
-  <script src="scripts/index.js" defer></script>
+    <link rel="stylesheet" href="public/styles/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="scripts/index.js"></script>
 
-  <title>News homepage</title>
-
-</head>
-<body class="font-[Inter] min-h-full max-w-[150rem] mx-auto py-5 px-4 md:px-44 md:py-20">
-
-  <header class="flex justify-between">
+    <title>News homepage</title>
+  </head>
+  <body
+    class="mx-auto min-h-full max-w-[150rem] px-4 py-5 font-[Inter] md:px-44 md:py-20"
+  >
+    <header class="flex justify-between">
       <div>
-        <img class="w-16 p-3" src="assets/images/logo.svg" alt="...">
+        <img class="w-16 p-3" src="assets/images/logo.svg" alt="..." />
       </div>
 
-      <nav id="nav-links" class="hidden max-sm:fixed bg-white max-sm:h-[100dvh] max-sm:w-[70%] max-sm:top-0 max-sm:right-0 max-sm:justify-center md:flex">
-        <ul class="flex md:flex-row flex-col justify-center gap-8">
-          <li><a class="hover:text-orange-500" href="#">Home</a></li>
-          <li><a class="hover:text-orange-500" href="#">New</a> </li>
+      <nav id="nav-links" class="invisible md:visible">
+        <ul
+          class="fixed right-0 z-10 mx-auto flex h-screen w-3/4 flex-col place-content-center gap-12 bg-white text-center md:static md:mr-16 md:h-auto md:flex-row"
+        >
+          <li>
+            <a class="mx-auto hover:text-orange-500" href="#">Home</a>
+          </li>
+          <li><a class="hover:text-orange-500" href="#">New</a></li>
           <li><a class="hover:text-orange-500" href="#">Popular</a></li>
           <li><a class="hover:text-orange-500" href="#">Trending</a></li>
           <li><a class="hover:text-orange-500" href="#">Categories</a></li>
         </ul>
       </nav>
 
-      <div class="md:hidden">
-        <ion-icon class="text-4xl" onclick="eventHandler(this)" name="menu-outline"></ion-icon>
+      <div class="fixed right-5 z-50 md:hidden">
+        <ion-icon
+          class="right-4 z-50 text-4xl sm:fixed"
+          onclick="eventHandler(this)"
+          name="menu-outline"
+        ></ion-icon>
       </div>
-  </header>
+    </header>
 
-  <main class="grid gap-12">
-    <div class="custom-col grid gap-6">
-      <div class="grid">
-        <div>
-          <img class="lg:hidden mb-4" src="assets/images/image-web-3-mobile.jpg" alt="">
-          <img class="max-lg:hidden 2xl:mb-8" src="assets/images/image-web-3-desktop.jpg" alt="">
+    <main class="grid gap-12">
+      <div class="custom-col grid gap-6">
+        <div class="grid">
+          <div>
+            <img
+              class="mb-4 lg:hidden"
+              src="assets/images/image-web-3-mobile.jpg"
+              alt=""
+            />
+            <img
+              class="max-lg:hidden 2xl:mb-8"
+              src="assets/images/image-web-3-desktop.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <h1 class="text-5xl font-extrabold">
+                The Bright Future of Web 3.0?
+              </h1>
+            </div>
+            <div>
+              <p class="mb-6 text-gray-600">
+                We dive into the next evolution of the web that claims to put
+                the power of the platforms back into the hands of the people.
+                But is it really fulfilling its promise?
+              </p>
+              <button
+                class="mr-auto bg-red-400 px-12 py-3 text-lg font-bold tracking-widest text-white hover:bg-slate-900"
+              >
+                Read more
+              </button>
+            </div>
+          </div>
         </div>
 
-        <div class="grid gap-4 md:grid-cols-2">
+        <div class="grid gap-4 bg-slate-900 px-4 py-7 text-white">
           <div>
-            <h1 class="text-5xl font-extrabold">The Bright Future of Web 3.0?</h1>
+            <h1 class="text-2xl font-bold text-yellow-400">New</h1>
           </div>
-          <div>
-            <p class="text-gray-600 mb-6">
-              We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
-              But is it really fulfilling its promise?
-            </p>
-            <button class="bg-red-400 text-white tracking-widest text-lg font-bold mr-auto px-12 py-3 hover:bg-slate-900">
-              Read more
-            </button>
-          </div>
-        </div> 
-      </div>
-  
-      <div class="grid bg-slate-900 text-white gap-4 px-4 py-7">
-        <div>
-          <h1 class="text-2xl font-bold text-yellow-400">New</h1>
-        </div>
-  
-        <div class="grid gap-12">
-          <div class="border-b border-x-gray-900">
-            <h2 class="text-lg font-bold mb-1 hover:text-yellow-400 cursor-pointer">
-              Hydrogen VS Electric Cars
-            </h2>
-            <p class="text-gray-400 pb-12">
-              Will hydrogen-fueled cars ever catch up to EVs?
-            </p>
-          </div>
-    
-          <div class="border-b border-x-gray-900">
-            <h2 class="text-lg font-bold mb-1 hover:text-yellow-400 cursor-pointer">
-              The Downsides of AI Artistry
-            </h2>
-            <p class="text-gray-400 pb-12">
-              What are the possible adverse effects of on-demand AI image generation?
-            </p>
-          </div>
-    
-          <div>
-            <h2 class="text-lg font-bold mb-1 hover:text-yellow-400 cursor-pointer">
-              Is VC Funding Drying Up?
-            </h2>
-            <p class="text-gray-400">
-              Private funding by VC firms is down 50% YOY. We take a look at what that means.
-            </p>
+
+          <div class="grid gap-12">
+            <div class="border-b border-x-gray-900">
+              <h2
+                class="mb-1 cursor-pointer text-lg font-bold hover:text-yellow-400"
+              >
+                Hydrogen VS Electric Cars
+              </h2>
+              <p class="pb-12 text-gray-400">
+                Will hydrogen-fueled cars ever catch up to EVs?
+              </p>
+            </div>
+
+            <div class="border-b border-x-gray-900">
+              <h2
+                class="mb-1 cursor-pointer text-lg font-bold hover:text-yellow-400"
+              >
+                The Downsides of AI Artistry
+              </h2>
+              <p class="pb-12 text-gray-400">
+                What are the possible adverse effects of on-demand AI image
+                generation?
+              </p>
+            </div>
+
+            <div>
+              <h2
+                class="mb-1 cursor-pointer text-lg font-bold hover:text-yellow-400"
+              >
+                Is VC Funding Drying Up?
+              </h2>
+              <p class="text-gray-400">
+                Private funding by VC firms is down 50% YOY. We take a look at
+                what that means.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="grid gap-10 md:grid-cols-3">
+        <div style="grid-template-columns: 8rem 1fr" class="grid gap-5">
+          <div class="w-32">
+            <img src="assets/images/image-retro-pcs.jpg" alt="" />
+          </div>
+
+          <div>
+            <h1 class="text-4xl font-bold text-gray-400">01</h1>
+            <h2 class="my-2 cursor-pointer font-bold hover:text-red-400">
+              Reviving Retro PCs
+            </h2>
+            <p class="text-sm leading-loose text-gray-600">
+              What happens when old PCs are given modern upgrades?
+            </p>
+          </div>
+        </div>
+
+        <div style="grid-template-columns: 8rem 1fr" class="grid gap-5">
+          <div class="w-32">
+            <img src="assets/images/image-top-laptops.jpg" alt="" />
+          </div>
+
+          <div>
+            <h1 class="text-4xl font-bold text-gray-400">02</h1>
+            <h2 class="my-2 cursor-pointer font-bold hover:text-red-400">
+              Top 10 Laptops of 2023
+            </h2>
+            <p class="text-sm leading-loose text-gray-600">
+              Our best picks for various needs and budgets.
+            </p>
+          </div>
+        </div>
+
+        <div style="grid-template-columns: 8rem 1fr" class="grid gap-5">
+          <div class="w-32">
+            <img src="assets/images/image-gaming-growth.jpg" alt="" />
+          </div>
+
+          <div>
+            <h1 class="text-4xl font-bold text-gray-400">03</h1>
+            <h2 class="my-2 cursor-pointer font-bold hover:text-red-400">
+              The Growth of Gaming
+            </h2>
+            <p class="text-sm leading-loose text-gray-600">
+              How the pandemic has sparked fresh opportunities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="attribution mt-6">
+      Coded by <a target="_blank" href="www.github.com/devSaifur">devSaifur</a>
     </div>
-
-    <div class="grid gap-10 md:grid-cols-3">
-      <div style="grid-template-columns: 8rem 1fr;" class="grid gap-5">
-        <div class="w-32">
-          <img src="assets/images/image-retro-pcs.jpg" alt="">
-        </div>
-
-        <div>
-          <h1 class="text-gray-400 text-4xl font-bold">01</h1>
-          <h2 class="font-bold my-2 hover:text-red-400 cursor-pointer">Reviving Retro PCs</h2>
-          <p class="text-gray-600 text-sm leading-loose">What happens when old PCs are given modern upgrades?</p>
-        </div>
-      </div>
-
-      <div style="grid-template-columns: 8rem 1fr;" class="grid gap-5">
-        <div class="w-32">
-          <img src="assets/images/image-top-laptops.jpg" alt="">
-        </div>
-
-        <div>
-          <h1 class="text-gray-400 text-4xl font-bold">02</h1>
-          <h2 class="font-bold my-2 hover:text-red-400 cursor-pointer">Top 10 Laptops of 2023</h2>
-          <p class="text-gray-600 text-sm leading-loose">Our best picks for various needs and budgets.</p>
-        </div>
-      </div>
-
-      <div style="grid-template-columns: 8rem 1fr;" class="grid gap-5">
-        <div class="w-32">
-          <img src="assets/images/image-gaming-growth.jpg" alt="">
-        </div>
-
-        <div>
-          <h1 class="text-gray-400 text-4xl font-bold">03</h1>
-          <h2 class="font-bold my-2 hover:text-red-400 cursor-pointer">The Growth of Gaming</h2>
-          <p class="text-gray-600 text-sm leading-loose">How the pandemic has sparked fresh opportunities.</p>
-        </div>
-      </div>
-    </div>
-
-  </main>
-  
-  <div class="attribution mt-6">Coded by <a target="_blank" href="www.github.com/devSaifur">devSaifur</a>
-  </div>
-</body>
+  </body>
 </html>
